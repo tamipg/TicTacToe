@@ -34,6 +34,8 @@ Partial Class Form1
         Me.Jugador2Label = New System.Windows.Forms.Label()
         Me.puntuacion1 = New System.Windows.Forms.Label()
         Me.Puntuacion2 = New System.Windows.Forms.Label()
+        Me.turnoX = New System.Windows.Forms.Label()
+        Me.turnoO = New System.Windows.Forms.Label()
         Me.ToolStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -101,7 +103,7 @@ Partial Class Form1
         '
         Me.jugador1Label.AutoSize = True
         Me.jugador1Label.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.jugador1Label.Location = New System.Drawing.Point(12, 40)
+        Me.jugador1Label.Location = New System.Drawing.Point(210, 36)
         Me.jugador1Label.Name = "jugador1Label"
         Me.jugador1Label.Size = New System.Drawing.Size(107, 24)
         Me.jugador1Label.TabIndex = 0
@@ -111,7 +113,7 @@ Partial Class Form1
         '
         Me.Jugador2Label.AutoSize = True
         Me.Jugador2Label.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Jugador2Label.Location = New System.Drawing.Point(12, 73)
+        Me.Jugador2Label.Location = New System.Drawing.Point(210, 69)
         Me.Jugador2Label.Name = "Jugador2Label"
         Me.Jugador2Label.Size = New System.Drawing.Size(108, 24)
         Me.Jugador2Label.TabIndex = 2
@@ -121,7 +123,7 @@ Partial Class Form1
         '
         Me.puntuacion1.AutoSize = True
         Me.puntuacion1.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.puntuacion1.Location = New System.Drawing.Point(115, 40)
+        Me.puntuacion1.Location = New System.Drawing.Point(313, 36)
         Me.puntuacion1.Name = "puntuacion1"
         Me.puntuacion1.Size = New System.Drawing.Size(21, 24)
         Me.puntuacion1.TabIndex = 3
@@ -131,11 +133,31 @@ Partial Class Form1
         '
         Me.Puntuacion2.AutoSize = True
         Me.Puntuacion2.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Puntuacion2.Location = New System.Drawing.Point(115, 73)
+        Me.Puntuacion2.Location = New System.Drawing.Point(313, 69)
         Me.Puntuacion2.Name = "Puntuacion2"
         Me.Puntuacion2.Size = New System.Drawing.Size(21, 24)
         Me.Puntuacion2.TabIndex = 4
         Me.Puntuacion2.Text = "0"
+        '
+        'turnoX
+        '
+        Me.turnoX.AutoSize = True
+        Me.turnoX.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.turnoX.Location = New System.Drawing.Point(74, 36)
+        Me.turnoX.Name = "turnoX"
+        Me.turnoX.Size = New System.Drawing.Size(114, 24)
+        Me.turnoX.TabIndex = 5
+        Me.turnoX.Text = "Tu turno ->"
+        '
+        'turnoO
+        '
+        Me.turnoO.AutoSize = True
+        Me.turnoO.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.turnoO.Location = New System.Drawing.Point(74, 69)
+        Me.turnoO.Name = "turnoO"
+        Me.turnoO.Size = New System.Drawing.Size(114, 24)
+        Me.turnoO.TabIndex = 6
+        Me.turnoO.Text = "Tu turno ->"
         '
         'Form1
         '
@@ -143,6 +165,8 @@ Partial Class Form1
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
         Me.ClientSize = New System.Drawing.Size(363, 448)
+        Me.Controls.Add(Me.turnoO)
+        Me.Controls.Add(Me.turnoX)
         Me.Controls.Add(Me.Puntuacion2)
         Me.Controls.Add(Me.puntuacion1)
         Me.Controls.Add(Me.Jugador2Label)
@@ -170,4 +194,6 @@ Partial Class Form1
     Friend WithEvents Jugador2Label As Label
     Friend WithEvents puntuacion1 As Label
     Friend WithEvents Puntuacion2 As Label
+    Friend WithEvents turnoX As Label
+    Friend WithEvents turnoO As Label
 End Class

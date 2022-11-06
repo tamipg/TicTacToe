@@ -10,3 +10,4 @@ C:\Users\tamip\Desktop\TicTacToe\TicTacToe\obj\Debug\TicTacToe.vbproj.CoreCompil
 C:\Users\tamip\Desktop\TicTacToe\TicTacToe\obj\Debug\TicTacToe.exe
 C:\Users\tamip\Desktop\TicTacToe\TicTacToe\obj\Debug\TicTacToe.xml
 C:\Users\tamip\Desktop\TicTacToe\TicTacToe\obj\Debug\TicTacToe.pdb
+C:\Users\tamip\Desktop\tictactoe\TicTacToe\obj\Debug\TicTacToe.FormAyuda.resources
