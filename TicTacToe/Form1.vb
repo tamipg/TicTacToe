@@ -1,8 +1,5 @@
-﻿' Implementar el conocido juego del 3 en raya.
-' En esta primera versión deberemos implementar:
-' - Las nueve casilla creadas en tiempo de ejecución y formando un 3x3
-' - Menu que permita salir del juego, iniciar uno nuevo y tener una ayuda.
-' - Jugaremos 2 humanos, asi que cada clic pondrá una imagen distinta en una casilla vacía.
+﻿' Falta:
+' - Menu ayuda.
 ' - El sistema elegirá de forma aleatoria que jugador (1 ó 2) es el primero en jugar e indicará quien ha ganado
 '   o si ha terminado en empate, dando la posibilidad de volver a jugar o salir.
 
@@ -37,19 +34,19 @@ Public Class Form1
                 .Image = Image.FromFile(IO.Path.Combine(IO.Path.GetDirectoryName(IO.Path.GetDirectoryName(Application.StartupPath)), "imagenes\casilla.png"))
                 .Dock = DockStyle.Fill
                 .Parent = Me.Tablero
-                Controls.Add(casilla) 'Esto añade la LABEL al formulario
                 Tablero.Controls.Add(casilla)
                 AddHandler casilla.Click, AddressOf clickGame
             End With
         Next
         checker = False
         contador = 0
+        Tablero.Enabled = True
     End Sub
 
 
 
 
-    Private Sub clickGame(sender As Button, e As MouseEventArgs) Handles Tablero.Click
+    Private Sub clickGame(sender As Button, e As MouseEventArgs)
         Dim casilla As Button = sender
         contador += 1
 
@@ -59,10 +56,12 @@ Public Class Form1
                     btnTic1 = "O"
                     casilla.Image = Image.FromFile(IO.Path.Combine(IO.Path.GetDirectoryName(IO.Path.GetDirectoryName(Application.StartupPath)), "imagenes\o.png"))
                     checker = False
+                    casilla.Enabled = False
                 Else
                     btnTic1 = "X"
                     casilla.Image = Image.FromFile(IO.Path.Combine(IO.Path.GetDirectoryName(IO.Path.GetDirectoryName(Application.StartupPath)), "imagenes\x.png"))
                     checker = True
+                    casilla.Enabled = False
                 End If
 
             Case "btnTic2"
@@ -70,10 +69,12 @@ Public Class Form1
                     btnTic2 = "O"
                     casilla.Image = Image.FromFile(IO.Path.Combine(IO.Path.GetDirectoryName(IO.Path.GetDirectoryName(Application.StartupPath)), "imagenes\o.png"))
                     checker = False
+                    casilla.Enabled = False
                 Else
                     btnTic2 = "X"
                     casilla.Image = Image.FromFile(IO.Path.Combine(IO.Path.GetDirectoryName(IO.Path.GetDirectoryName(Application.StartupPath)), "imagenes\x.png"))
                     checker = True
+                    casilla.Enabled = False
                 End If
 
             Case "btnTic3"
@@ -81,74 +82,89 @@ Public Class Form1
                     btnTic3 = "O"
                     casilla.Image = Image.FromFile(IO.Path.Combine(IO.Path.GetDirectoryName(IO.Path.GetDirectoryName(Application.StartupPath)), "imagenes\o.png"))
                     checker = False
+                    casilla.Enabled = False
                 Else
                     btnTic3 = "X"
                     casilla.Image = Image.FromFile(IO.Path.Combine(IO.Path.GetDirectoryName(IO.Path.GetDirectoryName(Application.StartupPath)), "imagenes\x.png"))
                     checker = True
+                    casilla.Enabled = False
                 End If
             Case "btnTic4"
                 If checker = True Then
                     btnTic4 = "O"
                     casilla.Image = Image.FromFile(IO.Path.Combine(IO.Path.GetDirectoryName(IO.Path.GetDirectoryName(Application.StartupPath)), "imagenes\o.png"))
                     checker = False
+                    casilla.Enabled = False
                 Else
                     btnTic4 = "X"
                     casilla.Image = Image.FromFile(IO.Path.Combine(IO.Path.GetDirectoryName(IO.Path.GetDirectoryName(Application.StartupPath)), "imagenes\x.png"))
                     checker = True
+                    casilla.Enabled = False
                 End If
             Case "btnTic5"
                 If checker = True Then
                     btnTic5 = "O"
                     casilla.Image = Image.FromFile(IO.Path.Combine(IO.Path.GetDirectoryName(IO.Path.GetDirectoryName(Application.StartupPath)), "imagenes\o.png"))
                     checker = False
+                    casilla.Enabled = False
                 Else
                     btnTic5 = "X"
                     casilla.Image = Image.FromFile(IO.Path.Combine(IO.Path.GetDirectoryName(IO.Path.GetDirectoryName(Application.StartupPath)), "imagenes\x.png"))
                     checker = True
+                    casilla.Enabled = False
                 End If
             Case "btnTic6"
                 If checker = True Then
                     btnTic6 = "O"
                     casilla.Image = Image.FromFile(IO.Path.Combine(IO.Path.GetDirectoryName(IO.Path.GetDirectoryName(Application.StartupPath)), "imagenes\o.png"))
                     checker = False
+                    casilla.Enabled = False
                 Else
                     btnTic6 = "X"
                     casilla.Image = Image.FromFile(IO.Path.Combine(IO.Path.GetDirectoryName(IO.Path.GetDirectoryName(Application.StartupPath)), "imagenes\x.png"))
                     checker = True
+                    casilla.Enabled = False
                 End If
             Case "btnTic7"
                 If checker = True Then
                     btnTic7 = "O"
                     casilla.Image = Image.FromFile(IO.Path.Combine(IO.Path.GetDirectoryName(IO.Path.GetDirectoryName(Application.StartupPath)), "imagenes\o.png"))
-                    checker = False
+                    checker =
+                    casilla.Enabled = False
                 Else
                     btnTic7 = "X"
                     casilla.Image = Image.FromFile(IO.Path.Combine(IO.Path.GetDirectoryName(IO.Path.GetDirectoryName(Application.StartupPath)), "imagenes\x.png"))
                     checker = True
+                    casilla.Enabled = False
                 End If
             Case "btnTic8"
                 If checker = True Then
                     btnTic8 = "O"
                     casilla.Image = Image.FromFile(IO.Path.Combine(IO.Path.GetDirectoryName(IO.Path.GetDirectoryName(Application.StartupPath)), "imagenes\o.png"))
                     checker = False
+                    casilla.Enabled = False
                 Else
                     btnTic8 = "X"
                     casilla.Image = Image.FromFile(IO.Path.Combine(IO.Path.GetDirectoryName(IO.Path.GetDirectoryName(Application.StartupPath)), "imagenes\x.png"))
                     checker = True
+                    casilla.Enabled = False
                 End If
             Case "btnTic9"
                 If checker = True Then
                     btnTic9 = "O"
                     casilla.Image = Image.FromFile(IO.Path.Combine(IO.Path.GetDirectoryName(IO.Path.GetDirectoryName(Application.StartupPath)), "imagenes\o.png"))
                     checker = False
+                    casilla.Enabled = False
                 Else
                     btnTic9 = "X"
                     casilla.Image = Image.FromFile(IO.Path.Combine(IO.Path.GetDirectoryName(IO.Path.GetDirectoryName(Application.StartupPath)), "imagenes\x.png"))
                     checker = True
+                    casilla.Enabled = False
                 End If
 
         End Select
         score()
+
     End Sub
 
     Private Sub BorrarTablero()
@@ -170,123 +186,115 @@ Public Class Form1
                 MessageBox.Show("El ganador es el jugador X", "Tic Tac Toe", MessageBoxButtons.OK, MessageBoxIcon.Information)
                 plusone = Convert.ToInt64(puntuacion1.Text)
                 puntuacion1.Text = Convert.ToString(plusone + 1)
-                BorrarTablero()
-                CargarTablero()
+                Tablero.Enabled = False
 
             ElseIf btnTic4 = "X" And btnTic5 = "X" And btnTic6 = "X" Then
                 MessageBox.Show("El ganador es el jugador X", "Tic Tac Toe", MessageBoxButtons.OK, MessageBoxIcon.Information)
                 plusone = Convert.ToInt64(puntuacion1.Text)
                 puntuacion1.Text = Convert.ToString(plusone + 1)
-                BorrarTablero()
-                CargarTablero()
+                Tablero.Enabled = False
 
             ElseIf btnTic7 = "X" And btnTic8 = "X" And btnTic9 = "X" Then
                 MessageBox.Show("El ganador es el jugador X", "Tic Tac Toe", MessageBoxButtons.OK, MessageBoxIcon.Information)
                 plusone = Convert.ToInt64(puntuacion1.Text)
                 puntuacion1.Text = Convert.ToString(plusone + 1)
-                BorrarTablero()
-                CargarTablero()
+                Tablero.Enabled = False
 
             ElseIf btnTic1 = "X" And btnTic4 = "X" And btnTic7 = "X" Then
                 MessageBox.Show("El ganador es el jugador X", "Tic Tac Toe", MessageBoxButtons.OK, MessageBoxIcon.Information)
                 plusone = Convert.ToInt64(puntuacion1.Text)
                 puntuacion1.Text = Convert.ToString(plusone + 1)
-                BorrarTablero()
-                CargarTablero()
+                Tablero.Enabled = False
 
             ElseIf btnTic2 = "X" And btnTic5 = "X" And btnTic8 = "X" Then
                 MessageBox.Show("El ganador es el jugador X", "Tic Tac Toe", MessageBoxButtons.OK, MessageBoxIcon.Information)
                 plusone = Convert.ToInt64(puntuacion1.Text)
                 puntuacion1.Text = Convert.ToString(plusone + 1)
-                BorrarTablero()
-                CargarTablero()
+                Tablero.Enabled = False
 
             ElseIf btnTic3 = "X" And btnTic6 = "X" And btnTic9 = "X" Then
                 MessageBox.Show("El ganador es el jugador X", "Tic Tac Toe", MessageBoxButtons.OK, MessageBoxIcon.Information)
                 plusone = Convert.ToInt64(puntuacion1.Text)
                 puntuacion1.Text = Convert.ToString(plusone + 1)
-                BorrarTablero()
-                CargarTablero()
+                Tablero.Enabled = False
 
             ElseIf btnTic1 = "X" And btnTic5 = "X" And btnTic9 = "X" Then
                 MessageBox.Show("El ganador es el jugador X", "Tic Tac Toe", MessageBoxButtons.OK, MessageBoxIcon.Information)
                 plusone = Convert.ToInt64(puntuacion1.Text)
                 puntuacion1.Text = Convert.ToString(plusone + 1)
-                BorrarTablero()
-                CargarTablero()
+                Tablero.Enabled = False
 
             ElseIf btnTic3 = "X" And btnTic5 = "X" And btnTic7 = "X" Then
                 MessageBox.Show("El ganador es el jugador X", "Tic Tac Toe", MessageBoxButtons.OK, MessageBoxIcon.Information)
                 plusone = Convert.ToInt64(puntuacion1.Text)
                 puntuacion1.Text = Convert.ToString(plusone + 1)
-                BorrarTablero()
-                CargarTablero()
+                Tablero.Enabled = False
 
             ElseIf btnTic1 = "O" And btnTic2 = "O" And btnTic3 = "O" Then
                 MessageBox.Show("El ganador es el jugador O", "Tic Tac Toe", MessageBoxButtons.OK, MessageBoxIcon.Information)
                 plusone = Convert.ToInt64(Puntuacion2.Text)
                 Puntuacion2.Text = Convert.ToString(plusone + 1)
-                BorrarTablero()
-                CargarTablero()
+                Tablero.Enabled = False
 
             ElseIf btnTic4 = "O" And btnTic5 = "O" And btnTic6 = "O" Then
                 MessageBox.Show("El ganador es el jugador O", "Tic Tac Toe", MessageBoxButtons.OK, MessageBoxIcon.Information)
                 plusone = Convert.ToInt64(Puntuacion2.Text)
                 Puntuacion2.Text = Convert.ToString(plusone + 1)
-                BorrarTablero()
-                CargarTablero()
+                Tablero.Enabled = False
 
             ElseIf btnTic7 = "O" And btnTic8 = "O" And btnTic9 = "O" Then
                 MessageBox.Show("El ganador es el jugador O", "Tic Tac Toe", MessageBoxButtons.OK, MessageBoxIcon.Information)
                 plusone = Convert.ToInt64(Puntuacion2.Text)
                 Puntuacion2.Text = Convert.ToString(plusone + 1)
-                BorrarTablero()
-                CargarTablero()
+                Tablero.Enabled = False
 
             ElseIf btnTic1 = "O" And btnTic4 = "O" And btnTic7 = "O" Then
                 MessageBox.Show("El ganador es el jugador O", "Tic Tac Toe", MessageBoxButtons.OK, MessageBoxIcon.Information)
                 plusone = Convert.ToInt64(Puntuacion2.Text)
                 Puntuacion2.Text = Convert.ToString(plusone + 1)
-                BorrarTablero()
-                CargarTablero()
+                Tablero.Enabled = False
 
             ElseIf btnTic2 = "O" And btnTic5 = "O" And btnTic8 = "O" Then
                 MessageBox.Show("El ganador es el jugador O", "Tic Tac Toe", MessageBoxButtons.OK, MessageBoxIcon.Information)
                 plusone = Convert.ToInt64(Puntuacion2.Text)
                 Puntuacion2.Text = Convert.ToString(plusone + 1)
-                BorrarTablero()
-                CargarTablero()
+                Tablero.Enabled = False
 
             ElseIf btnTic3 = "O" And btnTic6 = "O" And btnTic9 = "O" Then
                 MessageBox.Show("El ganador es el jugador O", "Tic Tac Toe", MessageBoxButtons.OK, MessageBoxIcon.Information)
                 plusone = Convert.ToInt64(Puntuacion2.Text)
                 Puntuacion2.Text = Convert.ToString(plusone + 1)
-                BorrarTablero()
-                CargarTablero()
+                Tablero.Enabled = False
 
             ElseIf btnTic1 = "O" And btnTic5 = "O" And btnTic9 = "O" Then
                 MessageBox.Show("El ganador es el jugador O", "Tic Tac Toe", MessageBoxButtons.OK, MessageBoxIcon.Information)
                 plusone = Convert.ToInt64(Puntuacion2.Text)
                 Puntuacion2.Text = Convert.ToString(plusone + 1)
-                BorrarTablero()
-                CargarTablero()
+                Tablero.Enabled = False
 
             ElseIf btnTic3 = "O" And btnTic5 = "O" And btnTic7 = "O" Then
                 MessageBox.Show("El ganador es el jugador O", "Tic Tac Toe", MessageBoxButtons.OK, MessageBoxIcon.Information)
                 plusone = Convert.ToInt64(Puntuacion2.Text)
                 Puntuacion2.Text = Convert.ToString(plusone + 1)
-                BorrarTablero()
-                CargarTablero()
+                Tablero.Enabled = False
 
             End If
         Else
             MessageBox.Show("¡¡ EMPATE !!", "Tic Tac Toe", MessageBoxButtons.OK, MessageBoxIcon.Information)
-            BorrarTablero()
-            CargarTablero()
+            Tablero.Enabled = False
         End If
 
 
 
 
+    End Sub
+
+    Private Sub NuevoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles NuevoToolStripMenuItem.Click
+        BorrarTablero()
+        CargarTablero()
+    End Sub
+
+    Private Sub SalirToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SalirToolStripMenuItem.Click
+        Close()
     End Sub
 End Class
