@@ -303,17 +303,9 @@ Public Class Form1
                 Tablero.Enabled = False
             End If
         Else
-            If contador = 9 Then
-                contador = 8
-                score()
-            Else
-                MessageBox.Show("¡¡ EMPATE !!", "Tic Tac Toe", MessageBoxButtons.OK, MessageBoxIcon.Information)
-                Tablero.Enabled = False
-            End If
-
+            MessageBox.Show("¡¡ EMPATE !!", "Tic Tac Toe", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            Tablero.Enabled = False
         End If
-
-
 
     End Sub
 
