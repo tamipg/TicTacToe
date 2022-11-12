@@ -219,88 +219,55 @@ Public Class Form1
         btnTic9 = ""
     End Sub
 
+    Private Sub mostrarGanador(sender As String)
+        If sender = "X" Then
+            MessageBox.Show("El ganador es el jugador X", "Tic Tac Toe", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            plusone = Convert.ToInt64(puntuacion1.Text)
+            puntuacion1.Text = Convert.ToString(plusone + 1)
+            Tablero.Enabled = False
+        Else
+            MessageBox.Show("El ganador es el jugador 0", "Tic Tac Toe", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            plusone = Convert.ToInt64(Puntuacion2.Text)
+            Puntuacion2.Text = Convert.ToString(plusone + 1)
+            Tablero.Enabled = False
+        End If
+
+    End Sub
+
     Private Sub score()
         If contador < 9 Then
             If btnTic1 = "X" And btnTic2 = "X" And btnTic3 = "X" Then
-                MessageBox.Show("El ganador es el jugador X", "Tic Tac Toe", MessageBoxButtons.OK, MessageBoxIcon.Information)
-                plusone = Convert.ToInt64(puntuacion1.Text)
-                puntuacion1.Text = Convert.ToString(plusone + 1)
-                Tablero.Enabled = False
+                mostrarGanador("X")
             ElseIf btnTic4 = "X" And btnTic5 = "X" And btnTic6 = "X" Then
-                MessageBox.Show("El ganador es el jugador X", "Tic Tac Toe", MessageBoxButtons.OK, MessageBoxIcon.Information)
-                plusone = Convert.ToInt64(puntuacion1.Text)
-                puntuacion1.Text = Convert.ToString(plusone + 1)
-                Tablero.Enabled = False
+                mostrarGanador("X")
             ElseIf btnTic7 = "X" And btnTic8 = "X" And btnTic9 = "X" Then
-                MessageBox.Show("El ganador es el jugador X", "Tic Tac Toe", MessageBoxButtons.OK, MessageBoxIcon.Information)
-                plusone = Convert.ToInt64(puntuacion1.Text)
-                puntuacion1.Text = Convert.ToString(plusone + 1)
-                Tablero.Enabled = False
+                mostrarGanador("X")
             ElseIf btnTic1 = "X" And btnTic4 = "X" And btnTic7 = "X" Then
-                MessageBox.Show("El ganador es el jugador X", "Tic Tac Toe", MessageBoxButtons.OK, MessageBoxIcon.Information)
-                plusone = Convert.ToInt64(puntuacion1.Text)
-                puntuacion1.Text = Convert.ToString(plusone + 1)
-                Tablero.Enabled = False
+                mostrarGanador("X")
             ElseIf btnTic2 = "X" And btnTic5 = "X" And btnTic8 = "X" Then
-                MessageBox.Show("El ganador es el jugador X", "Tic Tac Toe", MessageBoxButtons.OK, MessageBoxIcon.Information)
-                plusone = Convert.ToInt64(puntuacion1.Text)
-                puntuacion1.Text = Convert.ToString(plusone + 1)
-                Tablero.Enabled = False
+                mostrarGanador("X")
             ElseIf btnTic3 = "X" And btnTic6 = "X" And btnTic9 = "X" Then
-                MessageBox.Show("El ganador es el jugador X", "Tic Tac Toe", MessageBoxButtons.OK, MessageBoxIcon.Information)
-                plusone = Convert.ToInt64(puntuacion1.Text)
-                puntuacion1.Text = Convert.ToString(plusone + 1)
-                Tablero.Enabled = False
+                mostrarGanador("X")
             ElseIf btnTic1 = "X" And btnTic5 = "X" And btnTic9 = "X" Then
-                MessageBox.Show("El ganador es el jugador X", "Tic Tac Toe", MessageBoxButtons.OK, MessageBoxIcon.Information)
-                plusone = Convert.ToInt64(puntuacion1.Text)
-                puntuacion1.Text = Convert.ToString(plusone + 1)
-                Tablero.Enabled = False
+                mostrarGanador("X")
             ElseIf btnTic3 = "X" And btnTic5 = "X" And btnTic7 = "X" Then
-                MessageBox.Show("El ganador es el jugador X", "Tic Tac Toe", MessageBoxButtons.OK, MessageBoxIcon.Information)
-                plusone = Convert.ToInt64(puntuacion1.Text)
-                puntuacion1.Text = Convert.ToString(plusone + 1)
-                Tablero.Enabled = False
+                mostrarGanador("X")
             ElseIf btnTic1 = "O" And btnTic2 = "O" And btnTic3 = "O" Then
-                MessageBox.Show("El ganador es el jugador O", "Tic Tac Toe", MessageBoxButtons.OK, MessageBoxIcon.Information)
-                plusone = Convert.ToInt64(Puntuacion2.Text)
-                Puntuacion2.Text = Convert.ToString(plusone + 1)
-                Tablero.Enabled = False
+                mostrarGanador("O")
             ElseIf btnTic4 = "O" And btnTic5 = "O" And btnTic6 = "O" Then
-                MessageBox.Show("El ganador es el jugador O", "Tic Tac Toe", MessageBoxButtons.OK, MessageBoxIcon.Information)
-                plusone = Convert.ToInt64(Puntuacion2.Text)
-                Puntuacion2.Text = Convert.ToString(plusone + 1)
-                Tablero.Enabled = False
+                mostrarGanador("O")
             ElseIf btnTic7 = "O" And btnTic8 = "O" And btnTic9 = "O" Then
-                MessageBox.Show("El ganador es el jugador O", "Tic Tac Toe", MessageBoxButtons.OK, MessageBoxIcon.Information)
-                plusone = Convert.ToInt64(Puntuacion2.Text)
-                Puntuacion2.Text = Convert.ToString(plusone + 1)
-                Tablero.Enabled = False
+                mostrarGanador("O")
             ElseIf btnTic1 = "O" And btnTic4 = "O" And btnTic7 = "O" Then
-                MessageBox.Show("El ganador es el jugador O", "Tic Tac Toe", MessageBoxButtons.OK, MessageBoxIcon.Information)
-                plusone = Convert.ToInt64(Puntuacion2.Text)
-                Puntuacion2.Text = Convert.ToString(plusone + 1)
-                Tablero.Enabled = False
+                mostrarGanador("O")
             ElseIf btnTic2 = "O" And btnTic5 = "O" And btnTic8 = "O" Then
-                MessageBox.Show("El ganador es el jugador O", "Tic Tac Toe", MessageBoxButtons.OK, MessageBoxIcon.Information)
-                plusone = Convert.ToInt64(Puntuacion2.Text)
-                Puntuacion2.Text = Convert.ToString(plusone + 1)
-                Tablero.Enabled = False
+                mostrarGanador("O")
             ElseIf btnTic3 = "O" And btnTic6 = "O" And btnTic9 = "O" Then
-                MessageBox.Show("El ganador es el jugador O", "Tic Tac Toe", MessageBoxButtons.OK, MessageBoxIcon.Information)
-                plusone = Convert.ToInt64(Puntuacion2.Text)
-                Puntuacion2.Text = Convert.ToString(plusone + 1)
-                Tablero.Enabled = False
+                mostrarGanador("O")
             ElseIf btnTic1 = "O" And btnTic5 = "O" And btnTic9 = "O" Then
-                MessageBox.Show("El ganador es el jugador O", "Tic Tac Toe", MessageBoxButtons.OK, MessageBoxIcon.Information)
-                plusone = Convert.ToInt64(Puntuacion2.Text)
-                Puntuacion2.Text = Convert.ToString(plusone + 1)
-                Tablero.Enabled = False
+                mostrarGanador("O")
             ElseIf btnTic3 = "O" And btnTic5 = "O" And btnTic7 = "O" Then
-                MessageBox.Show("El ganador es el jugador O", "Tic Tac Toe", MessageBoxButtons.OK, MessageBoxIcon.Information)
-                plusone = Convert.ToInt64(Puntuacion2.Text)
-                Puntuacion2.Text = Convert.ToString(plusone + 1)
-                Tablero.Enabled = False
+                mostrarGanador("O")
             End If
         Else
             MessageBox.Show("¡¡ EMPATE !!", "Tic Tac Toe", MessageBoxButtons.OK, MessageBoxIcon.Information)
