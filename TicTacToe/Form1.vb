@@ -187,7 +187,9 @@ Public Class Form1
                 End If
 
         End Select
-        score()
+
+
+        score(casilla)
         CambiaTurno()
 
     End Sub
@@ -234,7 +236,8 @@ Public Class Form1
 
     End Sub
 
-    Private Sub score()
+    Private Sub score(sender As Button)
+
         If contador < 9 Then
             If btnTic1 = "X" And btnTic2 = "X" And btnTic3 = "X" Then
                 mostrarGanador("X")
@@ -287,5 +290,9 @@ Public Class Form1
 
     Private Sub AyudaButton_Click(sender As Object, e As EventArgs) Handles AyudaButton.Click
         My.Forms.FormAyuda.Show()
+    End Sub
+
+    Private Sub PropiedadesToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PropiedadesToolStripMenuItem.Click
+        My.Forms.FormPropiedades.Show()
     End Sub
 End Class

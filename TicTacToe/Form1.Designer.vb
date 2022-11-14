@@ -36,6 +36,7 @@ Partial Class Form1
         Me.Puntuacion2 = New System.Windows.Forms.Label()
         Me.turnoX = New System.Windows.Forms.Label()
         Me.turnoO = New System.Windows.Forms.Label()
+        Me.PropiedadesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -66,7 +67,7 @@ Partial Class Form1
         'Juego
         '
         Me.Juego.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text
-        Me.Juego.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.NuevoToolStripMenuItem, Me.SalirToolStripMenuItem})
+        Me.Juego.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.NuevoToolStripMenuItem, Me.PropiedadesToolStripMenuItem, Me.SalirToolStripMenuItem})
         Me.Juego.Image = CType(resources.GetObject("Juego.Image"), System.Drawing.Image)
         Me.Juego.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.Juego.Name = "Juego"
@@ -159,6 +160,12 @@ Partial Class Form1
         Me.turnoO.TabIndex = 6
         Me.turnoO.Text = "Tu turno ->"
         '
+        'PropiedadesToolStripMenuItem
+        '
+        Me.PropiedadesToolStripMenuItem.Name = "PropiedadesToolStripMenuItem"
+        Me.PropiedadesToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.PropiedadesToolStripMenuItem.Text = "Propiedades"
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -196,4 +203,5 @@ Partial Class Form1
     Friend WithEvents Puntuacion2 As Label
     Friend WithEvents turnoX As Label
     Friend WithEvents turnoO As Label
+    Friend WithEvents PropiedadesToolStripMenuItem As ToolStripMenuItem
 End Class
