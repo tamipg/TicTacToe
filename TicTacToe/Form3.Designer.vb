@@ -47,7 +47,7 @@ Partial Class FormPropiedades
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(52, 61)
+        Me.Label1.Location = New System.Drawing.Point(52, 30)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(57, 13)
         Me.Label1.TabIndex = 0
@@ -55,14 +55,14 @@ Partial Class FormPropiedades
         '
         'TextBox1
         '
-        Me.TextBox1.Location = New System.Drawing.Point(115, 54)
+        Me.TextBox1.Location = New System.Drawing.Point(115, 23)
         Me.TextBox1.Name = "TextBox1"
         Me.TextBox1.Size = New System.Drawing.Size(158, 20)
         Me.TextBox1.TabIndex = 1
         '
         'TextBox2
         '
-        Me.TextBox2.Location = New System.Drawing.Point(424, 54)
+        Me.TextBox2.Location = New System.Drawing.Point(424, 23)
         Me.TextBox2.Name = "TextBox2"
         Me.TextBox2.Size = New System.Drawing.Size(158, 20)
         Me.TextBox2.TabIndex = 3
@@ -70,7 +70,7 @@ Partial Class FormPropiedades
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(361, 61)
+        Me.Label2.Location = New System.Drawing.Point(361, 30)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(57, 13)
         Me.Label2.TabIndex = 2
@@ -78,7 +78,7 @@ Partial Class FormPropiedades
         '
         'btImagen1
         '
-        Me.btImagen1.Location = New System.Drawing.Point(34, 121)
+        Me.btImagen1.Location = New System.Drawing.Point(34, 90)
         Me.btImagen1.Name = "btImagen1"
         Me.btImagen1.Size = New System.Drawing.Size(75, 23)
         Me.btImagen1.TabIndex = 4
@@ -87,7 +87,7 @@ Partial Class FormPropiedades
         '
         'PictureBox1
         '
-        Me.PictureBox1.Location = New System.Drawing.Point(115, 80)
+        Me.PictureBox1.Location = New System.Drawing.Point(115, 49)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(158, 108)
         Me.PictureBox1.TabIndex = 5
@@ -95,7 +95,7 @@ Partial Class FormPropiedades
         '
         'PictureBox2
         '
-        Me.PictureBox2.Location = New System.Drawing.Point(424, 80)
+        Me.PictureBox2.Location = New System.Drawing.Point(424, 49)
         Me.PictureBox2.Name = "PictureBox2"
         Me.PictureBox2.Size = New System.Drawing.Size(158, 108)
         Me.PictureBox2.TabIndex = 7
@@ -103,7 +103,7 @@ Partial Class FormPropiedades
         '
         'btImagen2
         '
-        Me.btImagen2.Location = New System.Drawing.Point(343, 121)
+        Me.btImagen2.Location = New System.Drawing.Point(343, 90)
         Me.btImagen2.Name = "btImagen2"
         Me.btImagen2.Size = New System.Drawing.Size(75, 23)
         Me.btImagen2.TabIndex = 6
@@ -113,7 +113,7 @@ Partial Class FormPropiedades
         'CheckBox1
         '
         Me.CheckBox1.AutoSize = True
-        Me.CheckBox1.Location = New System.Drawing.Point(28, 161)
+        Me.CheckBox1.Location = New System.Drawing.Point(28, 130)
         Me.CheckBox1.Name = "CheckBox1"
         Me.CheckBox1.Size = New System.Drawing.Size(81, 17)
         Me.CheckBox1.TabIndex = 8
@@ -123,7 +123,7 @@ Partial Class FormPropiedades
         'CheckBox2
         '
         Me.CheckBox2.AutoSize = True
-        Me.CheckBox2.Location = New System.Drawing.Point(337, 161)
+        Me.CheckBox2.Location = New System.Drawing.Point(337, 130)
         Me.CheckBox2.Name = "CheckBox2"
         Me.CheckBox2.Size = New System.Drawing.Size(81, 17)
         Me.CheckBox2.TabIndex = 9
@@ -133,7 +133,7 @@ Partial Class FormPropiedades
         'cbOrdenador
         '
         Me.cbOrdenador.AutoSize = True
-        Me.cbOrdenador.Location = New System.Drawing.Point(506, 194)
+        Me.cbOrdenador.Location = New System.Drawing.Point(506, 163)
         Me.cbOrdenador.Name = "cbOrdenador"
         Me.cbOrdenador.Size = New System.Drawing.Size(76, 17)
         Me.cbOrdenador.TabIndex = 10
@@ -145,7 +145,7 @@ Partial Class FormPropiedades
         Me.GroupBox1.Controls.Add(Me.RadioButton3)
         Me.GroupBox1.Controls.Add(Me.RadioButton2)
         Me.GroupBox1.Controls.Add(Me.RadioButton1)
-        Me.GroupBox1.Location = New System.Drawing.Point(28, 248)
+        Me.GroupBox1.Location = New System.Drawing.Point(28, 217)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(554, 75)
         Me.GroupBox1.TabIndex = 11
@@ -187,7 +187,7 @@ Partial Class FormPropiedades
         '
         'btCancelar
         '
-        Me.btCancelar.Location = New System.Drawing.Point(315, 329)
+        Me.btCancelar.Location = New System.Drawing.Point(315, 298)
         Me.btCancelar.Name = "btCancelar"
         Me.btCancelar.Size = New System.Drawing.Size(75, 23)
         Me.btCancelar.TabIndex = 12
@@ -196,7 +196,7 @@ Partial Class FormPropiedades
         '
         'btAceptar
         '
-        Me.btAceptar.Location = New System.Drawing.Point(207, 329)
+        Me.btAceptar.Location = New System.Drawing.Point(207, 298)
         Me.btAceptar.Name = "btAceptar"
         Me.btAceptar.Size = New System.Drawing.Size(75, 23)
         Me.btAceptar.TabIndex = 13
@@ -207,7 +207,7 @@ Partial Class FormPropiedades
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(615, 377)
+        Me.ClientSize = New System.Drawing.Size(615, 338)
         Me.Controls.Add(Me.btAceptar)
         Me.Controls.Add(Me.btCancelar)
         Me.Controls.Add(Me.GroupBox1)
@@ -222,6 +222,7 @@ Partial Class FormPropiedades
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.TextBox1)
         Me.Controls.Add(Me.Label1)
+        Me.MaximizeBox = False
         Me.Name = "FormPropiedades"
         Me.Text = "Propiedades del juego"
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()

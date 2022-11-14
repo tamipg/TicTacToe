@@ -25,6 +25,7 @@ Public Class Form1
         turnoX.Visible = False
         turnoO.Visible = False
         AsignaTurno()
+        Tablero.Enabled = False
     End Sub
 
     Private Sub AsignaTurno()
