@@ -51,7 +51,7 @@ Public Class Form1
     End Sub
 
 
-    Private Sub CargarTablero()
+    Public Sub CargarTablero()
         turnoX.Visible = False
         turnoO.Visible = False
 
@@ -117,7 +117,7 @@ Public Class Form1
         End If
     End Sub
 
-    Private Sub BorrarTablero()
+    Public Sub BorrarTablero()
         Tablero.Controls.Clear()
         For i = 1 To 9
             btnTic(i - 1) = "btnTic" & i
@@ -127,38 +127,54 @@ Public Class Form1
     Private Sub score(sender As Button)
 
         If contador < 9 Then
-            If btnTic(0) = "X" And btnTic(1) = "X" And btnTic(2) = "X" Then
-                mostrarGanador("X")
-            ElseIf btnTic(3) = "X" And btnTic(4) = "X" And btnTic(5) = "X" Then
-                mostrarGanador("X")
-            ElseIf btnTic(6) = "X" And btnTic(7) = "X" And btnTic(8) = "X" Then
-                mostrarGanador("X")
-            ElseIf btnTic(0) = "X" And btnTic(3) = "X" And btnTic(6) = "X" Then
-                mostrarGanador("X")
-            ElseIf btnTic(1) = "X" And btnTic(4) = "X" And btnTic(7) = "X" Then
-                mostrarGanador("X")
-            ElseIf btnTic(2) = "X" And btnTic(5) = "X" And btnTic(8) = "X" Then
-                mostrarGanador("X")
-            ElseIf btnTic(0) = "X" And btnTic(4) = "X" And btnTic(8) = "X" Then
-                mostrarGanador("X")
-            ElseIf btnTic(2) = "X" And btnTic(4) = "X" And btnTic(6) = "X" Then
-                mostrarGanador("X")
-            ElseIf btnTic(0) = "O" And btnTic(1) = "O" And btnTic(2) = "O" Then
-                mostrarGanador("O")
-            ElseIf btnTic(3) = "O" And btnTic(4) = "O" And btnTic(5) = "O" Then
-                mostrarGanador("O")
-            ElseIf btnTic(6) = "O" And btnTic(7) = "O" And btnTic(8) = "O" Then
-                mostrarGanador("O")
-            ElseIf btnTic(0) = "O" And btnTic(3) = "O" And btnTic(6) = "O" Then
-                mostrarGanador("O")
-            ElseIf btnTic(1) = "O" And btnTic(4) = "O" And btnTic(7) = "O" Then
-                mostrarGanador("O")
-            ElseIf btnTic(2) = "O" And btnTic(5) = "O" And btnTic(8) = "O" Then
-                mostrarGanador("O")
-            ElseIf btnTic(0) = "O" And btnTic(4) = "O" And btnTic(8) = "O" Then
-                mostrarGanador("O")
-            ElseIf btnTic(2) = "O" And btnTic(4) = "O" And btnTic(6) = "O" Then
-                mostrarGanador("O")
+            If btnTic(0).Equals(btnTic(1)).Equals(btnTic(2)) Then
+                If checker = False Then
+                    mostrarGanador("X")
+                ElseIf checker = True Then
+                    mostrarGanador("O")
+                End If
+            ElseIf btnTic(3).Equals(btnTic(4)).Equals(btnTic(5)) Then
+                If jugador = 1 Then
+                    mostrarGanador("X")
+                ElseIf jugador = 2 Then
+                    mostrarGanador("O")
+                End If
+            ElseIf btnTic(6).Equals(btnTic(7)).Equals(btnTic(8)) Then
+                If jugador = 1 Then
+                    mostrarGanador("X")
+                ElseIf jugador = 2 Then
+                    mostrarGanador("O")
+                End If
+            ElseIf btnTic(0).Equals(btnTic(3)).Equals(btnTic(6)) Then
+                If jugador = 1 Then
+                    mostrarGanador("X")
+                ElseIf jugador = 2 Then
+                    mostrarGanador("O")
+                End If
+            ElseIf btnTic(1).Equals(btnTic(4)).Equals(btnTic(7)) Then
+                If jugador = 1 Then
+                    mostrarGanador("X")
+                ElseIf jugador = 2 Then
+                    mostrarGanador("O")
+                End If
+            ElseIf btnTic(2).Equals(btnTic(5)).Equals(btnTic(8)) Then
+                If jugador = 1 Then
+                    mostrarGanador("X")
+                ElseIf jugador = 2 Then
+                    mostrarGanador("O")
+                End If
+            ElseIf btnTic(0).Equals(btnTic(4)).Equals(btnTic(8)) Then
+                If jugador = 1 Then
+                    mostrarGanador("X")
+                ElseIf jugador = 2 Then
+                    mostrarGanador("O")
+                End If
+            ElseIf btnTic(2).Equals(btnTic(4)).Equals(btnTic(6)) Then
+                If jugador = 1 Then
+                    mostrarGanador("X")
+                ElseIf jugador = 2 Then
+                    mostrarGanador("O")
+                End If
             End If
         Else
             MessageBox.Show("¡¡ EMPATE !!", "Tic Tac Toe", MessageBoxButtons.OK, MessageBoxIcon.Information)
