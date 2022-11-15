@@ -3,6 +3,8 @@ Public Class Form1
 
     Dim checker As Boolean
     Dim btnTic(8) As String
+    Dim tableroX(8) As Boolean
+    Dim tableroO(8) As Boolean
     Dim plusone As Integer
     Dim contador As Integer
     Dim turno1, turno2 As Integer
@@ -68,6 +70,12 @@ Public Class Form1
                 AddHandler casilla.Click, AddressOf clickGame
             End With
         Next
+
+        For i = 1 To 9
+            tableroX(i - 1) = False
+            tableroO(i - 1) = False
+        Next
+
         checker = False
         contador = 0
         Tablero.Enabled = True
@@ -85,11 +93,13 @@ Public Class Form1
             If casilla.Name.Equals(btnTic(i)) Then
                 If checker = True Then
                     btnTic(i) = "O"
+                    tableroO(i) = True
                     casilla.Image = foto2
                     checker = False
                     casilla.Enabled = False
                 Else
                     btnTic(i) = "X"
+                    tableroX(i) = True
                     casilla.Image = foto1
                     checker = True
                     casilla.Enabled = False
@@ -97,7 +107,7 @@ Public Class Form1
             End If
         Next
 
-        score(casilla)
+        score()
 
         CambiaTurno()
 
@@ -124,59 +134,37 @@ Public Class Form1
         Next
     End Sub
 
+    Private Sub ShowGanador()
+        If checker = True Then
+            mostrarGanador("X")
+        ElseIf checker = False Then
+            mostrarGanador("O")
+        End If
+    End Sub
+
     ' NO FUNCIONA
-    Private Sub score(sender As Button)
+    Private Sub score()
         If contador < 9 Then
-            If btnTic(0).Equals(btnTic(1)).Equals(btnTic(2)) Then
-                If checker = False Then
-                    mostrarGanador("X")
-                ElseIf checker = True Then
-                    mostrarGanador("O")
-                End If
-            ElseIf btnTic(3).Equals(btnTic(4)).Equals(btnTic(5)) Then
-                If jugador = 1 Then
-                    mostrarGanador("X")
-                ElseIf jugador = 2 Then
-                    mostrarGanador("O")
-                End If
-            ElseIf btnTic(6).Equals(btnTic(7)).Equals(btnTic(8)) Then
-                If jugador = 1 Then
-                    mostrarGanador("X")
-                ElseIf jugador = 2 Then
-                    mostrarGanador("O")
-                End If
-            ElseIf btnTic(0).Equals(btnTic(3)).Equals(btnTic(6)) Then
-                If jugador = 1 Then
-                    mostrarGanador("X")
-                ElseIf jugador = 2 Then
-                    mostrarGanador("O")
-                End If
-            ElseIf btnTic(1).Equals(btnTic(4)).Equals(btnTic(7)) Then
-                If jugador = 1 Then
-                    mostrarGanador("X")
-                ElseIf jugador = 2 Then
-                    mostrarGanador("O")
-                End If
-            ElseIf btnTic(2).Equals(btnTic(5)).Equals(btnTic(8)) Then
-                If jugador = 1 Then
-                    mostrarGanador("X")
-                ElseIf jugador = 2 Then
-                    mostrarGanador("O")
-                End If
-            ElseIf btnTic(0).Equals(btnTic(4)).Equals(btnTic(8)) Then
-                If jugador = 1 Then
-                    mostrarGanador("X")
-                ElseIf jugador = 2 Then
-                    mostrarGanador("O")
-                End If
-            ElseIf btnTic(2).Equals(btnTic(4)).Equals(btnTic(6)) Then
-                If jugador = 1 Then
-                    mostrarGanador("X")
-                ElseIf jugador = 2 Then
-                    mostrarGanador("O")
-                End If
+            If tableroX(0) And tableroX(1) And tableroX(2) Or
+                tableroX(3) And tableroX(4) And tableroX(5) Or
+                tableroX(6) And tableroX(7) And tableroX(8) Or
+                tableroX(0) And tableroX(3) And tableroX(6) Or
+                tableroX(1) And tableroX(4) And tableroX(7) Or
+                tableroX(2) And tableroX(5) And tableroX(8) Or
+                tableroX(0) And tableroX(4) And tableroX(8) Or
+                tableroX(2) And tableroX(4) And tableroX(6) Then
+                ShowGanador()
+            ElseIf tableroO(0) And tableroO(1) And tableroO(2) Or
+                tableroO(3) And tableroO(4) And tableroO(5) Or
+                tableroO(6) And tableroO(7) And tableroO(8) Or
+                tableroO(0) And tableroO(3) And tableroO(6) Or
+                tableroO(1) And tableroO(4) And tableroO(7) Or
+                tableroO(2) And tableroO(5) And tableroO(8) Or
+                tableroO(0) And tableroO(4) And tableroO(8) Or
+                tableroO(2) And tableroO(4) And tableroO(6) Then
+                ShowGanador()
             End If
-        Else
+        ElseIf contador = 9 Then
             MessageBox.Show("¡¡ EMPATE !!", "Tic Tac Toe", MessageBoxButtons.OK, MessageBoxIcon.Information)
             Tablero.Enabled = False
         End If
