@@ -12,7 +12,7 @@ Public Class Form1
     Dim jugador As Integer
     Dim foto1, foto2 As Image
 
-
+    '' ------------ FALTA TABLERO 3X3 Y 4X4 ----------------------
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         CargarTablero()
@@ -142,7 +142,6 @@ Public Class Form1
         End If
     End Sub
 
-    ' NO FUNCIONA
     Private Sub score()
         If contador < 9 Then
             If tableroX(0) And tableroX(1) And tableroX(2) Or
