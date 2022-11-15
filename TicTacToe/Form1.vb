@@ -2,21 +2,16 @@
 Public Class Form1
 
     Dim checker As Boolean
-    Dim btnTic1 As String
-    Dim btnTic2 As String
-    Dim btnTic3 As String
-    Dim btnTic4 As String
-    Dim btnTic5 As String
-    Dim btnTic6 As String
-    Dim btnTic7 As String
-    Dim btnTic8 As String
-    Dim btnTic9 As String
+    Dim btnTic(8) As String
     Dim plusone As Integer
     Dim contador As Integer
-    Dim turno1 As Integer
-    Dim turno2 As Integer
+    Dim turno1, turno2 As Integer
     Dim turno As Integer
     Dim jugador As Integer
+    Dim foto1, foto2 As Image
+
+
+
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         CargarTablero()
@@ -26,6 +21,15 @@ Public Class Form1
         turnoO.Visible = False
         AsignaTurno()
         Tablero.Enabled = False
+        foto1 = Image.FromFile(IO.Path.Combine(IO.Path.GetDirectoryName(IO.Path.GetDirectoryName(Application.StartupPath)), "imagenes\x.png"))
+        foto2 = Image.FromFile(IO.Path.Combine(IO.Path.GetDirectoryName(IO.Path.GetDirectoryName(Application.StartupPath)), "imagenes\o.png"))
+    End Sub
+
+    Public Sub setConfig(nombre1 As String, nombre2 As String, imagen1 As Image, imagen2 As Image)
+        jugador1Label.Text = nombre1
+        Jugador2Label.Text = nombre2
+        foto1 = imagen1
+        foto2 = imagen2
     End Sub
 
     Private Sub AsignaTurno()
@@ -56,6 +60,7 @@ Public Class Form1
             Dim casilla As New System.Windows.Forms.Button
             With casilla
                 .Name = "btnTic" & j
+                btnTic(j - 1) = .Name
                 .Left = .Width * (j - 1)
                 .Image = Image.FromFile(IO.Path.Combine(IO.Path.GetDirectoryName(IO.Path.GetDirectoryName(Application.StartupPath)), "imagenes\casilla.png"))
                 .Dock = DockStyle.Fill
@@ -71,124 +76,27 @@ Public Class Form1
     End Sub
 
 
+
+
     Private Sub clickGame(sender As Button, e As MouseEventArgs)
         Dim casilla As Button = sender
         contador += 1
 
-        Select Case casilla.Name
-            Case "btnTic1"
+        For i = 0 To 8
+            If casilla.Name.Equals(btnTic(i)) Then
                 If checker = True Then
-                    btnTic1 = "O"
-                    casilla.Image = Image.FromFile(IO.Path.Combine(IO.Path.GetDirectoryName(IO.Path.GetDirectoryName(Application.StartupPath)), "imagenes\o.png"))
+                    btnTic(i) = "O"
+                    casilla.Image = foto2
                     checker = False
                     casilla.Enabled = False
                 Else
-                    btnTic1 = "X"
-                    casilla.Image = Image.FromFile(IO.Path.Combine(IO.Path.GetDirectoryName(IO.Path.GetDirectoryName(Application.StartupPath)), "imagenes\x.png"))
+                    btnTic(i) = "X"
+                    casilla.Image = foto1
                     checker = True
                     casilla.Enabled = False
                 End If
-
-            Case "btnTic2"
-                If checker = True Then
-                    btnTic2 = "O"
-                    casilla.Image = Image.FromFile(IO.Path.Combine(IO.Path.GetDirectoryName(IO.Path.GetDirectoryName(Application.StartupPath)), "imagenes\o.png"))
-                    checker = False
-                    casilla.Enabled = False
-                Else
-                    btnTic2 = "X"
-                    casilla.Image = Image.FromFile(IO.Path.Combine(IO.Path.GetDirectoryName(IO.Path.GetDirectoryName(Application.StartupPath)), "imagenes\x.png"))
-                    checker = True
-                    casilla.Enabled = False
-                End If
-
-            Case "btnTic3"
-                If checker = True Then
-                    btnTic3 = "O"
-                    casilla.Image = Image.FromFile(IO.Path.Combine(IO.Path.GetDirectoryName(IO.Path.GetDirectoryName(Application.StartupPath)), "imagenes\o.png"))
-                    checker = False
-                    casilla.Enabled = False
-                Else
-                    btnTic3 = "X"
-                    casilla.Image = Image.FromFile(IO.Path.Combine(IO.Path.GetDirectoryName(IO.Path.GetDirectoryName(Application.StartupPath)), "imagenes\x.png"))
-                    checker = True
-                    casilla.Enabled = False
-                End If
-            Case "btnTic4"
-                If checker = True Then
-                    btnTic4 = "O"
-                    casilla.Image = Image.FromFile(IO.Path.Combine(IO.Path.GetDirectoryName(IO.Path.GetDirectoryName(Application.StartupPath)), "imagenes\o.png"))
-                    checker = False
-                    casilla.Enabled = False
-                Else
-                    btnTic4 = "X"
-                    casilla.Image = Image.FromFile(IO.Path.Combine(IO.Path.GetDirectoryName(IO.Path.GetDirectoryName(Application.StartupPath)), "imagenes\x.png"))
-                    checker = True
-                    casilla.Enabled = False
-                End If
-            Case "btnTic5"
-                If checker = True Then
-                    btnTic5 = "O"
-                    casilla.Image = Image.FromFile(IO.Path.Combine(IO.Path.GetDirectoryName(IO.Path.GetDirectoryName(Application.StartupPath)), "imagenes\o.png"))
-                    checker = False
-                    casilla.Enabled = False
-                Else
-                    btnTic5 = "X"
-                    casilla.Image = Image.FromFile(IO.Path.Combine(IO.Path.GetDirectoryName(IO.Path.GetDirectoryName(Application.StartupPath)), "imagenes\x.png"))
-                    checker = True
-                    casilla.Enabled = False
-                End If
-            Case "btnTic6"
-                If checker = True Then
-                    btnTic6 = "O"
-                    casilla.Image = Image.FromFile(IO.Path.Combine(IO.Path.GetDirectoryName(IO.Path.GetDirectoryName(Application.StartupPath)), "imagenes\o.png"))
-                    checker = False
-                    casilla.Enabled = False
-                Else
-                    btnTic6 = "X"
-                    casilla.Image = Image.FromFile(IO.Path.Combine(IO.Path.GetDirectoryName(IO.Path.GetDirectoryName(Application.StartupPath)), "imagenes\x.png"))
-                    checker = True
-                    casilla.Enabled = False
-                End If
-            Case "btnTic7"
-                If checker = True Then
-                    btnTic7 = "O"
-                    casilla.Image = Image.FromFile(IO.Path.Combine(IO.Path.GetDirectoryName(IO.Path.GetDirectoryName(Application.StartupPath)), "imagenes\o.png"))
-                    checker = False
-                    casilla.Enabled = False
-                Else
-                    btnTic7 = "X"
-                    casilla.Image = Image.FromFile(IO.Path.Combine(IO.Path.GetDirectoryName(IO.Path.GetDirectoryName(Application.StartupPath)), "imagenes\x.png"))
-                    checker = True
-                    casilla.Enabled = False
-                End If
-            Case "btnTic8"
-                If checker = True Then
-                    btnTic8 = "O"
-                    casilla.Image = Image.FromFile(IO.Path.Combine(IO.Path.GetDirectoryName(IO.Path.GetDirectoryName(Application.StartupPath)), "imagenes\o.png"))
-                    checker = False
-                    casilla.Enabled = False
-                Else
-                    btnTic8 = "X"
-                    casilla.Image = Image.FromFile(IO.Path.Combine(IO.Path.GetDirectoryName(IO.Path.GetDirectoryName(Application.StartupPath)), "imagenes\x.png"))
-                    checker = True
-                    casilla.Enabled = False
-                End If
-            Case "btnTic9"
-                If checker = True Then
-                    btnTic9 = "O"
-                    casilla.Image = Image.FromFile(IO.Path.Combine(IO.Path.GetDirectoryName(IO.Path.GetDirectoryName(Application.StartupPath)), "imagenes\o.png"))
-                    checker = False
-                    casilla.Enabled = False
-                Else
-                    btnTic9 = "X"
-                    casilla.Image = Image.FromFile(IO.Path.Combine(IO.Path.GetDirectoryName(IO.Path.GetDirectoryName(Application.StartupPath)), "imagenes\x.png"))
-                    checker = True
-                    casilla.Enabled = False
-                End If
-
-        End Select
-
+            End If
+        Next
 
         score(casilla)
         CambiaTurno()
@@ -211,15 +119,52 @@ Public Class Form1
 
     Private Sub BorrarTablero()
         Tablero.Controls.Clear()
-        btnTic1 = ""
-        btnTic2 = ""
-        btnTic3 = ""
-        btnTic4 = ""
-        btnTic5 = ""
-        btnTic6 = ""
-        btnTic7 = ""
-        btnTic8 = ""
-        btnTic9 = ""
+        For i = 1 To 9
+            btnTic(i - 1) = "btnTic" & i
+        Next
+    End Sub
+
+    Private Sub score(sender As Button)
+
+        If contador < 9 Then
+            If btnTic(0) = "X" And btnTic(1) = "X" And btnTic(2) = "X" Then
+                mostrarGanador("X")
+            ElseIf btnTic(3) = "X" And btnTic(4) = "X" And btnTic(5) = "X" Then
+                mostrarGanador("X")
+            ElseIf btnTic(6) = "X" And btnTic(7) = "X" And btnTic(8) = "X" Then
+                mostrarGanador("X")
+            ElseIf btnTic(0) = "X" And btnTic(3) = "X" And btnTic(6) = "X" Then
+                mostrarGanador("X")
+            ElseIf btnTic(1) = "X" And btnTic(4) = "X" And btnTic(7) = "X" Then
+                mostrarGanador("X")
+            ElseIf btnTic(2) = "X" And btnTic(5) = "X" And btnTic(8) = "X" Then
+                mostrarGanador("X")
+            ElseIf btnTic(0) = "X" And btnTic(4) = "X" And btnTic(8) = "X" Then
+                mostrarGanador("X")
+            ElseIf btnTic(2) = "X" And btnTic(4) = "X" And btnTic(6) = "X" Then
+                mostrarGanador("X")
+            ElseIf btnTic(0) = "O" And btnTic(1) = "O" And btnTic(2) = "O" Then
+                mostrarGanador("O")
+            ElseIf btnTic(3) = "O" And btnTic(4) = "O" And btnTic(5) = "O" Then
+                mostrarGanador("O")
+            ElseIf btnTic(6) = "O" And btnTic(7) = "O" And btnTic(8) = "O" Then
+                mostrarGanador("O")
+            ElseIf btnTic(0) = "O" And btnTic(3) = "O" And btnTic(6) = "O" Then
+                mostrarGanador("O")
+            ElseIf btnTic(1) = "O" And btnTic(4) = "O" And btnTic(7) = "O" Then
+                mostrarGanador("O")
+            ElseIf btnTic(2) = "O" And btnTic(5) = "O" And btnTic(8) = "O" Then
+                mostrarGanador("O")
+            ElseIf btnTic(0) = "O" And btnTic(4) = "O" And btnTic(8) = "O" Then
+                mostrarGanador("O")
+            ElseIf btnTic(2) = "O" And btnTic(4) = "O" And btnTic(6) = "O" Then
+                mostrarGanador("O")
+            End If
+        Else
+            MessageBox.Show("¡¡ EMPATE !!", "Tic Tac Toe", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            Tablero.Enabled = False
+        End If
+
     End Sub
 
     Private Sub mostrarGanador(sender As String)
@@ -237,48 +182,7 @@ Public Class Form1
 
     End Sub
 
-    Private Sub score(sender As Button)
 
-        If contador < 9 Then
-            If btnTic1 = "X" And btnTic2 = "X" And btnTic3 = "X" Then
-                mostrarGanador("X")
-            ElseIf btnTic4 = "X" And btnTic5 = "X" And btnTic6 = "X" Then
-                mostrarGanador("X")
-            ElseIf btnTic7 = "X" And btnTic8 = "X" And btnTic9 = "X" Then
-                mostrarGanador("X")
-            ElseIf btnTic1 = "X" And btnTic4 = "X" And btnTic7 = "X" Then
-                mostrarGanador("X")
-            ElseIf btnTic2 = "X" And btnTic5 = "X" And btnTic8 = "X" Then
-                mostrarGanador("X")
-            ElseIf btnTic3 = "X" And btnTic6 = "X" And btnTic9 = "X" Then
-                mostrarGanador("X")
-            ElseIf btnTic1 = "X" And btnTic5 = "X" And btnTic9 = "X" Then
-                mostrarGanador("X")
-            ElseIf btnTic3 = "X" And btnTic5 = "X" And btnTic7 = "X" Then
-                mostrarGanador("X")
-            ElseIf btnTic1 = "O" And btnTic2 = "O" And btnTic3 = "O" Then
-                mostrarGanador("O")
-            ElseIf btnTic4 = "O" And btnTic5 = "O" And btnTic6 = "O" Then
-                mostrarGanador("O")
-            ElseIf btnTic7 = "O" And btnTic8 = "O" And btnTic9 = "O" Then
-                mostrarGanador("O")
-            ElseIf btnTic1 = "O" And btnTic4 = "O" And btnTic7 = "O" Then
-                mostrarGanador("O")
-            ElseIf btnTic2 = "O" And btnTic5 = "O" And btnTic8 = "O" Then
-                mostrarGanador("O")
-            ElseIf btnTic3 = "O" And btnTic6 = "O" And btnTic9 = "O" Then
-                mostrarGanador("O")
-            ElseIf btnTic1 = "O" And btnTic5 = "O" And btnTic9 = "O" Then
-                mostrarGanador("O")
-            ElseIf btnTic3 = "O" And btnTic5 = "O" And btnTic7 = "O" Then
-                mostrarGanador("O")
-            End If
-        Else
-            MessageBox.Show("¡¡ EMPATE !!", "Tic Tac Toe", MessageBoxButtons.OK, MessageBoxIcon.Information)
-            Tablero.Enabled = False
-        End If
-
-    End Sub
 
     Private Sub NuevoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles NuevoToolStripMenuItem.Click
         BorrarTablero()
