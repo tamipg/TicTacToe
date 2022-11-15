@@ -4,7 +4,7 @@
     Dim nombre2 As String
     Dim imagen1 As Image
     Dim imagen2 As Image
-
+    Dim tablero As Integer
 
 
 
@@ -34,6 +34,8 @@
         TextBox1.Text = "Jugador 1"
         imagen1 = Image.FromFile(IO.Path.Combine(IO.Path.GetDirectoryName(IO.Path.GetDirectoryName(Application.StartupPath)), "imagenes\x.png"))
         PictureBox1.Image = imagen1
+        tablero = 3
+        RadioButton1.Checked = True
     End Sub
 
     Private Sub setDefault2()
@@ -64,6 +66,16 @@
     Private Sub CheckBox2_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox2.CheckedChanged
         If CheckBox2.Checked Then
             setDefault2()
+        End If
+    End Sub
+
+    Private Sub GroupBox1_Enter(sender As Object, e As EventArgs) Handles GroupBox1.Enter
+        If RadioButton1.Checked Then
+            tablero = 3
+        ElseIf RadioButton2.Checked Then
+            tablero = 4
+        ElseIf RadioButton3.Checked Then
+            tablero = 5
         End If
     End Sub
 End Class

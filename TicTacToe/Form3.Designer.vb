@@ -182,7 +182,6 @@ Partial Class FormPropiedades
         Me.RadioButton1.Name = "RadioButton1"
         Me.RadioButton1.Size = New System.Drawing.Size(48, 17)
         Me.RadioButton1.TabIndex = 14
-        Me.RadioButton1.TabStop = True
         Me.RadioButton1.Text = "3 x 3"
         Me.RadioButton1.UseVisualStyleBackColor = True
         '

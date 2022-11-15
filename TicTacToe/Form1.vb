@@ -12,7 +12,6 @@ Public Class Form1
 
 
 
-
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         CargarTablero()
         turno1 = 1
@@ -99,6 +98,7 @@ Public Class Form1
         Next
 
         score(casilla)
+
         CambiaTurno()
 
     End Sub
@@ -124,8 +124,8 @@ Public Class Form1
         Next
     End Sub
 
+    ' NO FUNCIONA
     Private Sub score(sender As Button)
-
         If contador < 9 Then
             If btnTic(0).Equals(btnTic(1)).Equals(btnTic(2)) Then
                 If checker = False Then
