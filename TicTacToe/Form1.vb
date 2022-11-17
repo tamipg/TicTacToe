@@ -12,7 +12,7 @@ Public Class Form1
     Dim jugador As Integer
     Dim foto1, foto2 As Image
 
-    '' ------------ FALTA TABLERO 3X3 Y 4X4 ----------------------
+    '' ------------ FALTA TABLERO 4X4 Y 5X5 ----------------------
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         CargarTablero()
