@@ -23,10 +23,10 @@ Partial Class Form1
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form1))
-        Me.Tablero = New System.Windows.Forms.TableLayoutPanel()
         Me.ToolStrip1 = New System.Windows.Forms.ToolStrip()
         Me.Juego = New System.Windows.Forms.ToolStripDropDownButton()
         Me.NuevoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.PropiedadesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.SalirToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator()
         Me.AyudaButton = New System.Windows.Forms.ToolStripButton()
@@ -36,24 +36,9 @@ Partial Class Form1
         Me.Puntuacion2 = New System.Windows.Forms.Label()
         Me.turnoX = New System.Windows.Forms.Label()
         Me.turnoO = New System.Windows.Forms.Label()
-        Me.PropiedadesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.FlowLayoutPanel1 = New System.Windows.Forms.FlowLayoutPanel()
         Me.ToolStrip1.SuspendLayout()
         Me.SuspendLayout()
-        '
-        'Tablero
-        '
-        Me.Tablero.ColumnCount = 3
-        Me.Tablero.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33334!))
-        Me.Tablero.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33334!))
-        Me.Tablero.ColumnStyles.Add(New System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33334!))
-        Me.Tablero.Location = New System.Drawing.Point(16, 106)
-        Me.Tablero.Name = "Tablero"
-        Me.Tablero.RowCount = 3
-        Me.Tablero.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33334!))
-        Me.Tablero.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33334!))
-        Me.Tablero.RowStyles.Add(New System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33334!))
-        Me.Tablero.Size = New System.Drawing.Size(330, 330)
-        Me.Tablero.TabIndex = 0
         '
         'ToolStrip1
         '
@@ -77,13 +62,19 @@ Partial Class Form1
         'NuevoToolStripMenuItem
         '
         Me.NuevoToolStripMenuItem.Name = "NuevoToolStripMenuItem"
-        Me.NuevoToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.NuevoToolStripMenuItem.Size = New System.Drawing.Size(139, 22)
         Me.NuevoToolStripMenuItem.Text = "Nuevo"
+        '
+        'PropiedadesToolStripMenuItem
+        '
+        Me.PropiedadesToolStripMenuItem.Name = "PropiedadesToolStripMenuItem"
+        Me.PropiedadesToolStripMenuItem.Size = New System.Drawing.Size(139, 22)
+        Me.PropiedadesToolStripMenuItem.Text = "Propiedades"
         '
         'SalirToolStripMenuItem
         '
         Me.SalirToolStripMenuItem.Name = "SalirToolStripMenuItem"
-        Me.SalirToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.SalirToolStripMenuItem.Size = New System.Drawing.Size(139, 22)
         Me.SalirToolStripMenuItem.Text = "Salir"
         '
         'ToolStripSeparator1
@@ -160,11 +151,12 @@ Partial Class Form1
         Me.turnoO.TabIndex = 6
         Me.turnoO.Text = "Tu turno ->"
         '
-        'PropiedadesToolStripMenuItem
+        'FlowLayoutPanel1
         '
-        Me.PropiedadesToolStripMenuItem.Name = "PropiedadesToolStripMenuItem"
-        Me.PropiedadesToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
-        Me.PropiedadesToolStripMenuItem.Text = "Propiedades"
+        Me.FlowLayoutPanel1.Location = New System.Drawing.Point(16, 106)
+        Me.FlowLayoutPanel1.Name = "FlowLayoutPanel1"
+        Me.FlowLayoutPanel1.Size = New System.Drawing.Size(330, 330)
+        Me.FlowLayoutPanel1.TabIndex = 7
         '
         'Form1
         '
@@ -172,6 +164,7 @@ Partial Class Form1
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
         Me.ClientSize = New System.Drawing.Size(363, 448)
+        Me.Controls.Add(Me.FlowLayoutPanel1)
         Me.Controls.Add(Me.turnoO)
         Me.Controls.Add(Me.turnoX)
         Me.Controls.Add(Me.Puntuacion2)
@@ -179,7 +172,6 @@ Partial Class Form1
         Me.Controls.Add(Me.Jugador2Label)
         Me.Controls.Add(Me.jugador1Label)
         Me.Controls.Add(Me.ToolStrip1)
-        Me.Controls.Add(Me.Tablero)
         Me.MaximizeBox = False
         Me.Name = "Form1"
         Me.Text = "Tic Tac Toe"
@@ -189,8 +181,6 @@ Partial Class Form1
         Me.PerformLayout()
 
     End Sub
-
-    Friend WithEvents Tablero As TableLayoutPanel
     Friend WithEvents ToolStrip1 As ToolStrip
     Friend WithEvents Juego As ToolStripDropDownButton
     Friend WithEvents NuevoToolStripMenuItem As ToolStripMenuItem
@@ -204,4 +194,5 @@ Partial Class Form1
     Friend WithEvents turnoX As Label
     Friend WithEvents turnoO As Label
     Friend WithEvents PropiedadesToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents FlowLayoutPanel1 As FlowLayoutPanel
 End Class

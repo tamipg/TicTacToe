@@ -2,26 +2,29 @@
 Public Class Form1
 
     Dim checker As Boolean
-    Dim btnTic(8) As String
-    Dim tableroX(8) As Boolean
-    Dim tableroO(8) As Boolean
+    Dim btnTic(16) As String
+    Dim tableroX(16) As Boolean
+    Dim tableroO(16) As Boolean
     Dim plusone As Integer
     Dim contador As Integer
     Dim turno1, turno2 As Integer
     Dim turno As Integer
     Dim jugador As Integer
     Dim foto1, foto2 As Image
+    Dim tablero2 As New TableLayoutPanel
+    Dim numeroTablero As New Integer
 
-    '' ------------ FALTA TABLERO 4X4 Y 5X5 ----------------------
+
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        CargarTablero()
+        numeroTablero = 4
+        CargarTablero(numeroTablero)
         turno1 = 1
         turno2 = 2
         turnoX.Visible = False
         turnoO.Visible = False
         AsignaTurno()
-        Tablero.Enabled = False
+        tablero2.Enabled = False
         foto1 = Image.FromFile(IO.Path.Combine(IO.Path.GetDirectoryName(IO.Path.GetDirectoryName(Application.StartupPath)), "imagenes\x.png"))
         foto2 = Image.FromFile(IO.Path.Combine(IO.Path.GetDirectoryName(IO.Path.GetDirectoryName(Application.StartupPath)), "imagenes\o.png"))
     End Sub
@@ -52,33 +55,82 @@ Public Class Form1
     End Sub
 
 
-    Public Sub CargarTablero()
+    Public Sub CargarTablero(sender As Integer)
         turnoX.Visible = False
         turnoO.Visible = False
 
-        Dim j As Integer
-        For j = 1 To 9
-            Dim casilla As New System.Windows.Forms.Button
-            With casilla
-                .Name = "btnTic" & j
-                btnTic(j - 1) = .Name
-                .Left = .Width * (j - 1)
-                .Image = Image.FromFile(IO.Path.Combine(IO.Path.GetDirectoryName(IO.Path.GetDirectoryName(Application.StartupPath)), "imagenes\casilla.png"))
-                .Dock = DockStyle.Fill
-                .Parent = Me.Tablero
-                Tablero.Controls.Add(casilla)
-                AddHandler casilla.Click, AddressOf clickGame
-            End With
-        Next
+        With tablero2
+            .AutoSize = False
+            .RowCount = 3
+            .Size = New Size(330, 330)
+        End With
 
-        For i = 1 To 9
-            tableroX(i - 1) = False
-            tableroO(i - 1) = False
-        Next
+        Select Case sender
+            Case 3
+                With tablero2
+                    .ColumnCount = 3
+                    .RowCount = 3
+                End With
+
+                Dim j As Integer
+                For j = 1 To 9
+                    Dim casilla As New System.Windows.Forms.Button
+                    With casilla
+                        .Name = "btnTic" & j
+                        btnTic(j - 1) = .Name
+                        .Left = .Width * (j - 1)
+                        .Image = Image.FromFile(IO.Path.Combine(IO.Path.GetDirectoryName(IO.Path.GetDirectoryName(Application.StartupPath)), "imagenes\casilla.png"))
+                        .Dock = DockStyle.Fill
+                        .Parent = Me.tablero2
+                        .Width = 104
+                        .Height = 104
+                        tablero2.Controls.Add(casilla)
+                        AddHandler casilla.Click, AddressOf clickGame
+                    End With
+                Next
+
+                For i = 1 To 9
+                    tableroX(i - 1) = False
+                    tableroO(i - 1) = False
+                Next
+
+            Case 4
+                With tablero2
+                    .ColumnCount = 4
+                    .RowCount = 4
+                End With
+
+                Dim j As Integer
+                For j = 1 To 16
+                    Dim casilla As New System.Windows.Forms.Button
+                    With casilla
+                        .Name = "btnTic" & j
+                        btnTic(j - 1) = .Name
+                        .Left = .Width * (j - 1)
+                        .Image = Image.FromFile(IO.Path.Combine(IO.Path.GetDirectoryName(IO.Path.GetDirectoryName(Application.StartupPath)), "imagenes\casilla.png"))
+                        .Dock = DockStyle.Fill
+                        .Parent = Me.tablero2
+                        .Width = 76
+                        .Height = 76
+                        tablero2.Controls.Add(casilla)
+                        AddHandler casilla.Click, AddressOf clickGame
+                    End With
+                Next
+
+                For i = 1 To 16
+                    tableroX(i - 1) = False
+                    tableroO(i - 1) = False
+                Next
+
+        End Select
+
+        FlowLayoutPanel1.Controls.Add(tablero2)
+
+
 
         checker = False
         contador = 0
-        Tablero.Enabled = True
+        tablero2.Enabled = True
         AsignaTurno()
     End Sub
 
@@ -128,7 +180,7 @@ Public Class Form1
     End Sub
 
     Public Sub BorrarTablero()
-        Tablero.Controls.Clear()
+        tablero2.Controls.Clear()
         For i = 1 To 9
             btnTic(i - 1) = "btnTic" & i
         Next
@@ -164,7 +216,7 @@ Public Class Form1
                 ShowGanador()
             ElseIf contador = 9 Then
                 MessageBox.Show("¡¡ EMPATE !!", "Tic Tac Toe", MessageBoxButtons.OK, MessageBoxIcon.Information)
-                Tablero.Enabled = False
+                tablero2.Enabled = False
             End If
         End If
 
@@ -176,12 +228,12 @@ Public Class Form1
             MessageBox.Show("El ganador es el jugador X", "Tic Tac Toe", MessageBoxButtons.OK, MessageBoxIcon.Information)
             plusone = Convert.ToInt64(puntuacion1.Text)
             puntuacion1.Text = Convert.ToString(plusone + 1)
-            Tablero.Enabled = False
+            tablero2.Enabled = False
         Else
             MessageBox.Show("El ganador es el jugador 0", "Tic Tac Toe", MessageBoxButtons.OK, MessageBoxIcon.Information)
             plusone = Convert.ToInt64(Puntuacion2.Text)
             Puntuacion2.Text = Convert.ToString(plusone + 1)
-            Tablero.Enabled = False
+            tablero2.Enabled = False
         End If
 
     End Sub
@@ -190,7 +242,7 @@ Public Class Form1
 
     Private Sub NuevoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles NuevoToolStripMenuItem.Click
         BorrarTablero()
-        CargarTablero()
+        CargarTablero(numeroTablero)
     End Sub
 
     Private Sub SalirToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SalirToolStripMenuItem.Click

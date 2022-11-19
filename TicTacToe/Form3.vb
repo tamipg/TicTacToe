@@ -5,7 +5,7 @@
     Dim imagen1 As Image
     Dim imagen2 As Image
     Dim tablero As Integer
-
+    Dim numTablero = 3
 
 
     Private Sub btAceptar_Click(sender As Object, e As EventArgs) Handles btAceptar.Click
@@ -17,7 +17,7 @@
         Close()
         Form1.setConfig(nombre1, nombre2, imagen1, imagen2)
         Form1.BorrarTablero()
-        Form1.CargarTablero()
+        Form1.CargarTablero(numTablero)
     End Sub
 
     Private Sub btCancelar_Click(sender As Object, e As EventArgs) Handles btCancelar.Click
@@ -74,8 +74,6 @@
             tablero = 3
         ElseIf RadioButton2.Checked Then
             tablero = 4
-        ElseIf RadioButton3.Checked Then
-            tablero = 5
         End If
     End Sub
 End Class

@@ -34,7 +34,6 @@ Partial Class FormPropiedades
         Me.CheckBox2 = New System.Windows.Forms.CheckBox()
         Me.cbOrdenador = New System.Windows.Forms.CheckBox()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.RadioButton3 = New System.Windows.Forms.RadioButton()
         Me.RadioButton2 = New System.Windows.Forms.RadioButton()
         Me.RadioButton1 = New System.Windows.Forms.RadioButton()
         Me.btCancelar = New System.Windows.Forms.Button()
@@ -143,7 +142,6 @@ Partial Class FormPropiedades
         '
         'GroupBox1
         '
-        Me.GroupBox1.Controls.Add(Me.RadioButton3)
         Me.GroupBox1.Controls.Add(Me.RadioButton2)
         Me.GroupBox1.Controls.Add(Me.RadioButton1)
         Me.GroupBox1.Location = New System.Drawing.Point(28, 217)
@@ -153,21 +151,10 @@ Partial Class FormPropiedades
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Cuadrícula"
         '
-        'RadioButton3
-        '
-        Me.RadioButton3.AutoSize = True
-        Me.RadioButton3.Location = New System.Drawing.Point(396, 33)
-        Me.RadioButton3.Name = "RadioButton3"
-        Me.RadioButton3.Size = New System.Drawing.Size(48, 17)
-        Me.RadioButton3.TabIndex = 16
-        Me.RadioButton3.TabStop = True
-        Me.RadioButton3.Text = "5 x 5"
-        Me.RadioButton3.UseVisualStyleBackColor = True
-        '
         'RadioButton2
         '
         Me.RadioButton2.AutoSize = True
-        Me.RadioButton2.Location = New System.Drawing.Point(231, 33)
+        Me.RadioButton2.Location = New System.Drawing.Point(315, 33)
         Me.RadioButton2.Name = "RadioButton2"
         Me.RadioButton2.Size = New System.Drawing.Size(48, 17)
         Me.RadioButton2.TabIndex = 15
@@ -178,7 +165,7 @@ Partial Class FormPropiedades
         'RadioButton1
         '
         Me.RadioButton1.AutoSize = True
-        Me.RadioButton1.Location = New System.Drawing.Point(87, 33)
+        Me.RadioButton1.Location = New System.Drawing.Point(197, 33)
         Me.RadioButton1.Name = "RadioButton1"
         Me.RadioButton1.Size = New System.Drawing.Size(48, 17)
         Me.RadioButton1.TabIndex = 14
@@ -250,7 +237,6 @@ Partial Class FormPropiedades
     Friend WithEvents CheckBox2 As CheckBox
     Friend WithEvents cbOrdenador As CheckBox
     Friend WithEvents GroupBox1 As GroupBox
-    Friend WithEvents RadioButton3 As RadioButton
     Friend WithEvents RadioButton2 As RadioButton
     Friend WithEvents RadioButton1 As RadioButton
     Friend WithEvents btCancelar As Button

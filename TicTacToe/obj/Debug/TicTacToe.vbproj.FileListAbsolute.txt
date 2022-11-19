@@ -25,3 +25,4 @@ C:\Users\tamip\Desktop\EntregablesDAM\tictactoe\TicTacToe\obj\Debug\TicTacToe.ex
 C:\Users\tamip\Desktop\EntregablesDAM\tictactoe\TicTacToe\obj\Debug\TicTacToe.xml
 C:\Users\tamip\Desktop\EntregablesDAM\tictactoe\TicTacToe\obj\Debug\TicTacToe.pdb
 C:\Users\tamip\Desktop\EntregablesDAM\tictactoe\TicTacToe\obj\Debug\TicTacToe.FormPropiedades.resources
+C:\Users\tamip\Desktop\tictactoe\TicTacToe\obj\Debug\TicTacToe.FormPropiedades.resources
