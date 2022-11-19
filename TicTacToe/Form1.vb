@@ -143,7 +143,7 @@ Public Class Form1
     End Sub
 
     Private Sub score()
-        If contador < 9 Then
+        If contador <= 9 Then
             If tableroX(0) And tableroX(1) And tableroX(2) Or
                 tableroX(3) And tableroX(4) And tableroX(5) Or
                 tableroX(6) And tableroX(7) And tableroX(8) Or
@@ -162,11 +162,12 @@ Public Class Form1
                 tableroO(0) And tableroO(4) And tableroO(8) Or
                 tableroO(2) And tableroO(4) And tableroO(6) Then
                 ShowGanador()
+            ElseIf contador = 9 Then
+                MessageBox.Show("¡¡ EMPATE !!", "Tic Tac Toe", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                Tablero.Enabled = False
             End If
-        ElseIf contador = 9 Then
-            MessageBox.Show("¡¡ EMPATE !!", "Tic Tac Toe", MessageBoxButtons.OK, MessageBoxIcon.Information)
-            Tablero.Enabled = False
         End If
+
 
     End Sub
 
