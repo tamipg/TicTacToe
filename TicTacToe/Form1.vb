@@ -8,6 +8,7 @@ Public Class Form1
     Dim plusone As Integer
     Dim contador As Integer
     Dim turno1, turno2 As Integer
+    Dim name1, name2 As String
     Dim turno As Integer
     Dim jugador As Integer
     Dim foto1, foto2 As Image
@@ -21,6 +22,8 @@ Public Class Form1
         CargarTablero(numeroTablero)
         turno1 = 1
         turno2 = 2
+        name1 = "X"
+        name2 = "O"
         turnoX.Visible = False
         turnoO.Visible = False
         AsignaTurno()
@@ -34,6 +37,8 @@ Public Class Form1
         Jugador2Label.Text = nombre2
         foto1 = imagen1
         foto2 = imagen2
+        name1 = nombre1
+        name2 = nombre2
         numeroTablero = numTablero
     End Sub
 
@@ -127,7 +132,6 @@ Public Class Form1
         Next
 
         score()
-
         CambiaTurno()
 
     End Sub
@@ -216,18 +220,17 @@ Public Class Form1
                     tablero.Enabled = False
                 End If
             End If
-
         End If
     End Sub
 
     Private Sub mostrarGanador(sender As String)
         If sender = "X" Then
-            MessageBox.Show("El ganador es el jugador X", "Tic Tac Toe", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            MessageBox.Show("El ganador es " + name1, "Tic Tac Toe", MessageBoxButtons.OK, MessageBoxIcon.Information)
             plusone = Convert.ToInt64(puntuacion1.Text)
             puntuacion1.Text = Convert.ToString(plusone + 1)
             tablero.Enabled = False
         Else
-            MessageBox.Show("El ganador es el jugador 0", "Tic Tac Toe", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            MessageBox.Show("El ganador es " + name2, "Tic Tac Toe", MessageBoxButtons.OK, MessageBoxIcon.Information)
             plusone = Convert.ToInt64(Puntuacion2.Text)
             Puntuacion2.Text = Convert.ToString(plusone + 1)
             tablero.Enabled = False
@@ -241,6 +244,11 @@ Public Class Form1
 
     Private Sub SalirToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SalirToolStripMenuItem.Click
         Close()
+    End Sub
+
+    Private Sub botonBorrar_Click(sender As Object, e As EventArgs) Handles botonBorrar.Click
+        puntuacion1.Text = 0
+        Puntuacion2.Text = 0
     End Sub
 
     Private Sub AyudaButton_Click(sender As Object, e As EventArgs) Handles AyudaButton.Click
