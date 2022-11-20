@@ -162,29 +162,61 @@ Public Class Form1
     End Sub
 
     Private Sub score()
-        If contador <= (numeroTablero * numeroTablero) Then
-            If tableroX(0) And tableroX(1) And tableroX(2) Or
-                tableroX(3) And tableroX(4) And tableroX(5) Or
-                tableroX(6) And tableroX(7) And tableroX(8) Or
-                tableroX(0) And tableroX(3) And tableroX(6) Or
-                tableroX(1) And tableroX(4) And tableroX(7) Or
-                tableroX(2) And tableroX(5) And tableroX(8) Or
-                tableroX(0) And tableroX(4) And tableroX(8) Or
-                tableroX(2) And tableroX(4) And tableroX(6) Then
-                ShowGanador()
-            ElseIf tableroO(0) And tableroO(1) And tableroO(2) Or
-                tableroO(3) And tableroO(4) And tableroO(5) Or
-                tableroO(6) And tableroO(7) And tableroO(8) Or
-                tableroO(0) And tableroO(3) And tableroO(6) Or
-                tableroO(1) And tableroO(4) And tableroO(7) Or
-                tableroO(2) And tableroO(5) And tableroO(8) Or
-                tableroO(0) And tableroO(4) And tableroO(8) Or
-                tableroO(2) And tableroO(4) And tableroO(6) Then
-                ShowGanador()
-            ElseIf contador = (numeroTablero * numeroTablero) Then
-                MessageBox.Show("¡¡ EMPATE !!", "Tic Tac Toe", MessageBoxButtons.OK, MessageBoxIcon.Information)
-                tablero.Enabled = False
+        If numeroTablero = 3 Then
+            If contador <= 9 Then
+                If tableroX(0) And tableroX(1) And tableroX(2) Or
+                    tableroX(3) And tableroX(4) And tableroX(5) Or
+                    tableroX(6) And tableroX(7) And tableroX(8) Or
+                    tableroX(0) And tableroX(3) And tableroX(6) Or
+                    tableroX(1) And tableroX(4) And tableroX(7) Or
+                    tableroX(2) And tableroX(5) And tableroX(8) Or
+                    tableroX(0) And tableroX(4) And tableroX(8) Or
+                    tableroX(2) And tableroX(4) And tableroX(6) Then
+                    ShowGanador()
+                ElseIf tableroO(0) And tableroO(1) And tableroO(2) Or
+                    tableroO(3) And tableroO(4) And tableroO(5) Or
+                    tableroO(6) And tableroO(7) And tableroO(8) Or
+                    tableroO(0) And tableroO(3) And tableroO(6) Or
+                    tableroO(1) And tableroO(4) And tableroO(7) Or
+                    tableroO(2) And tableroO(5) And tableroO(8) Or
+                    tableroO(0) And tableroO(4) And tableroO(8) Or
+                    tableroO(2) And tableroO(4) And tableroO(6) Then
+                    ShowGanador()
+                ElseIf contador = 9 Then
+                    MessageBox.Show("¡¡ EMPATE !!", "Tic Tac Toe", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                    tablero.Enabled = False
+                End If 
             End If
+        ElseIf numeroTablero = 4 Then
+            If contador <= 16 Then
+                If tableroX(0) And tableroX(1) And tableroX(2) And tableroX(3) Or
+                    tableroX(4) And tableroX(5) And tableroX(6) And tableroX(7) Or
+                    tableroX(8) And tableroX(9) And tableroX(10) And tableroX(11) Or
+                    tableroX(12) And tableroX(13) And tableroX(14) And tableroX(15) Or
+                    tableroX(0) And tableroX(4) And tableroX(8) And tableroX(12) Or
+                    tableroX(1) And tableroX(5) And tableroX(9) And tableroX(13) Or
+                    tableroX(2) And tableroX(6) And tableroX(10) And tableroX(14) Or
+                    tableroX(3) And tableroX(7) And tableroX(11) And tableroX(15) Or
+                    tableroX(0) And tableroX(5) And tableroX(10) And tableroX(15) Or
+                    tableroX(3) And tableroX(6) And tableroX(9) And tableroX(12) Then
+                    ShowGanador()
+                ElseIf tableroO(0) And tableroO(1) And tableroO(2) And tableroO(3) Or
+                    tableroO(4) And tableroO(5) And tableroO(6) And tableroO(7) Or
+                    tableroO(8) And tableroO(9) And tableroO(10) And tableroO(11) Or
+                    tableroO(12) And tableroO(13) And tableroO(14) And tableroO(15) Or
+                    tableroO(0) And tableroO(4) And tableroO(8) And tableroO(12) Or
+                    tableroO(1) And tableroO(5) And tableroO(9) And tableroO(13) Or
+                    tableroO(2) And tableroO(6) And tableroO(10) And tableroO(14) Or
+                    tableroO(3) And tableroO(7) And tableroO(11) And tableroO(15) Or
+                    tableroO(0) And tableroO(5) And tableroO(10) And tableroO(15) Or
+                    tableroO(3) And tableroO(6) And tableroO(9) And tableroO(12) Then
+                    ShowGanador()
+                ElseIf contador = 16 Then
+                    MessageBox.Show("¡¡ EMPATE !!", "Tic Tac Toe", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                    tablero.Enabled = False
+                End If
+            End If
+
         End If
     End Sub
 
