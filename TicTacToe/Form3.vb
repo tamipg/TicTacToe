@@ -94,12 +94,14 @@
             TextBox2.Enabled = False
             btImagen2.Enabled = False
             vsComputer = True
+            CheckBox2.Enabled = False
         Else
             nombre2 = "Jugador 2"
             TextBox2.Text = nombre2
             TextBox2.Enabled = True
             btImagen2.Enabled = True
             vsComputer = False
+            CheckBox2.Enabled = True
         End If
     End Sub
 End Class

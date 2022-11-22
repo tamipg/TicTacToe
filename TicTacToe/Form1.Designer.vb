@@ -63,19 +63,19 @@ Partial Class Form1
         'NuevoToolStripMenuItem
         '
         Me.NuevoToolStripMenuItem.Name = "NuevoToolStripMenuItem"
-        Me.NuevoToolStripMenuItem.Size = New System.Drawing.Size(139, 22)
+        Me.NuevoToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.NuevoToolStripMenuItem.Text = "Nuevo"
         '
         'PropiedadesToolStripMenuItem
         '
         Me.PropiedadesToolStripMenuItem.Name = "PropiedadesToolStripMenuItem"
-        Me.PropiedadesToolStripMenuItem.Size = New System.Drawing.Size(139, 22)
+        Me.PropiedadesToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.PropiedadesToolStripMenuItem.Text = "Propiedades"
         '
         'SalirToolStripMenuItem
         '
         Me.SalirToolStripMenuItem.Name = "SalirToolStripMenuItem"
-        Me.SalirToolStripMenuItem.Size = New System.Drawing.Size(139, 22)
+        Me.SalirToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
         Me.SalirToolStripMenuItem.Text = "Salir"
         '
         'ToolStripSeparator1
@@ -98,9 +98,9 @@ Partial Class Form1
         Me.jugador1Label.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.jugador1Label.Location = New System.Drawing.Point(221, 40)
         Me.jugador1Label.Name = "jugador1Label"
-        Me.jugador1Label.Size = New System.Drawing.Size(107, 24)
+        Me.jugador1Label.Size = New System.Drawing.Size(109, 24)
         Me.jugador1Label.TabIndex = 0
-        Me.jugador1Label.Text = "JugadorX:"
+        Me.jugador1Label.Text = "Jugador 1:"
         '
         'Jugador2Label
         '
@@ -108,9 +108,9 @@ Partial Class Form1
         Me.Jugador2Label.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Jugador2Label.Location = New System.Drawing.Point(221, 73)
         Me.Jugador2Label.Name = "Jugador2Label"
-        Me.Jugador2Label.Size = New System.Drawing.Size(108, 24)
+        Me.Jugador2Label.Size = New System.Drawing.Size(109, 24)
         Me.Jugador2Label.TabIndex = 2
-        Me.Jugador2Label.Text = "JugadorO:"
+        Me.Jugador2Label.Text = "Jugador 2:"
         '
         'puntuacion1
         '

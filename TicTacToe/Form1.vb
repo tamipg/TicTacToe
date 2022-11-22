@@ -26,8 +26,8 @@ Public Class Form1
         CargarTablero(numFila)
         turno1 = 1
         turno2 = 2
-        name1 = "X"
-        name2 = "O"
+        name1 = "Jugador 1"
+        name2 = "Jugador 2"
         turnoX.Visible = False
         turnoO.Visible = False
         AsignaTurno()
