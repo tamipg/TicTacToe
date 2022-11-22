@@ -38,6 +38,7 @@ Public Class Form1
         foto2 = Image.FromFile(IO.Path.Combine(IO.Path.GetDirectoryName(IO.Path.GetDirectoryName(Application.StartupPath)), "imagenes\o.png"))
     End Sub
 
+    ' CONFIGURACION DE PARTIDA
     Public Sub setConfig(nombre1 As String, nombre2 As String, imagen1 As Image, imagen2 As Image, tablero As Integer, vsComputer As Boolean)
         jugador1Label.Text = nombre1
         Jugador2Label.Text = nombre2
@@ -50,7 +51,7 @@ Public Class Form1
         vsOrdenador = vsComputer
     End Sub
 
-
+    ' ELIGE QUIEN EMPIEZA
     Private Sub AsignaTurno()
         turno = Int((30 * Rnd()) + 1)
 
@@ -67,9 +68,9 @@ Public Class Form1
             turnoO.Visible = True
             checker = True
         End If
-
     End Sub
 
+    ' CAMBIA DE JUGADOR
     Private Sub CambiaTurno()
         If jugador = 1 Then
             jugador = 2
@@ -82,13 +83,14 @@ Public Class Form1
             turnoO.Visible = False
             checker = False
         End If
-
     End Sub
 
+    ' CREA TABLERO
     Public Sub CargarTablero(sender As Integer)
         turnoX.Visible = False
         turnoO.Visible = False
 
+        ' Tamaño de tablero
         With tablero
             .AutoSize = False
             .RowCount = numFila
@@ -97,6 +99,9 @@ Public Class Form1
             .RowCount = numFila
         End With
 
+        numTablero = numFila * numFila
+
+        ' Generar casillas
         Dim j As Integer
         For j = 1 To numTablero
             Dim casilla As New System.Windows.Forms.Button
@@ -120,15 +125,6 @@ Public Class Form1
             End With
         Next
 
-        For i = 1 To numTablero
-            tableroX(i - 1) = False
-            tableroO(i - 1) = False
-        Next
-
-        For i = 0 To numTablero - 1
-            tabJuego(i).Text = ""
-        Next
-
         FlowLayoutPanel1.Controls.Add(tablero)
 
         checker = False
@@ -139,6 +135,7 @@ Public Class Form1
         newGame()
     End Sub
 
+    ' COMIENZA PARTIDA
     Private Sub newGame()
         If vsOrdenador = True Then
             If checker = True Then
@@ -147,12 +144,14 @@ Public Class Form1
         End If
     End Sub
 
-
+    ' CLICK EN EL TABLERO
     Private Sub clickGame(sender As Button, e As MouseEventArgs)
+        ' juego manual
         If vsOrdenador = False Then
             Jugada(sender)
         End If
 
+        ' juego vs ordenador
         If vsOrdenador = True Then
             If checker = False Then
                 Jugada(sender)
@@ -163,11 +162,9 @@ Public Class Form1
             End If
 
         End If
-
-
-
     End Sub
 
+    ' PRIORIDADES JUEGO VS ORDENADOR
     Private Sub JuegaPC()
         If BuscaCasilla("O") = False Then
             If BuscaCasilla("X") = False Then
@@ -176,12 +173,12 @@ Public Class Form1
         End If
     End Sub
 
-
+    ' BUSCA CASILLA PARA BLOQUEAR O GANAR 
     Private Function BuscaCasilla(sender As String)
-        ' horizontal
         Dim count As Integer
         Dim vacio As Integer
 
+        ' horizontal
         For i As Integer = 1 To numTablero Step numFila
             count = 0
             For e As Integer = i To i + (numFila - 1)
@@ -208,7 +205,6 @@ Public Class Form1
         Next
 
         ' vertical
-
         For i As Integer = 1 To numFila
             count = 0
             For e As Integer = 1 To numTablero Step numFila
@@ -233,7 +229,6 @@ Public Class Form1
         Next
 
         ' diagonal
-
         count = 0
         For e As Integer = 1 To numTablero Step numFila + 1
             Dim bt = tablero.Controls.Find("boton" & e, True)
@@ -277,34 +272,27 @@ Public Class Form1
         End If
 
         Return False
-
     End Function
 
+    ' ELIGE UNA CASILLA AL AZAR
     Private Sub CualquierCasilla()
         Dim numero As New Random
 
         While True And contador < numTablero
             Dim seleccion As Integer = numero.Next(1, numTablero + 1)
-
             Dim boton = Me.Controls.Find("boton" & seleccion, True)
             If boton.Length > 0 Then
                 If boton(0).Text = String.Empty Then
                     boton(0).Text = "O"
-
                     Jugada(boton(0))
-
                     Exit While
                 End If
             End If
-
         End While
-
     End Sub
 
-
+    ' MAECA LA CASILLA SELECCIONADA
     Private Sub Jugada(sender As Button)
-
-
         Dim casilla As Button = sender
 
         For i = 0 To numTablero - 1
@@ -326,29 +314,27 @@ Public Class Form1
         Next
         score()
         CambiaTurno()
-
-
     End Sub
 
 
-
+    ' BORRA EL TABLERO
     Public Sub BorrarTablero()
         tablero.Controls.Clear()
         For i = 1 To numTablero
             btnTic(i - 1) = "btnTic" & i
             tabJuego(i - 1).Text = vbEmpty
         Next
-
+        For i = 1 To numTablero
+            tableroX(i - 1) = False
+            tableroO(i - 1) = False
+        Next
+        For i = 0 To numTablero - 1
+            tabJuego(i).Text = ""
+        Next
     End Sub
 
-    Private Sub ShowGanador()
-        If checker = True Then
-            mostrarGanador("O")
-        ElseIf checker = False Then
-            mostrarGanador("X")
-        End If
-    End Sub
 
+    ' COMPRUEBA SI UNO DE LOS 2 HA GANADO O HAY EMPATE
     Private Sub score()
         contador += 1
 
@@ -411,6 +397,15 @@ Public Class Form1
         End If
     End Sub
 
+    ' MUESTRA UN MENSAJE CON EL GANADOR
+    Private Sub ShowGanador()
+        If checker = True Then
+            mostrarGanador("O")
+        ElseIf checker = False Then
+            mostrarGanador("X")
+        End If
+    End Sub
+
     Private Sub mostrarGanador(sender As String)
         If sender = "X" Then
             MessageBox.Show("El ganador es " + name1, "Tic Tac Toe", MessageBoxButtons.OK, MessageBoxIcon.Information)
@@ -426,28 +421,29 @@ Public Class Form1
         finJuego = True
     End Sub
 
-
-
-
-
+    ' NUEVA PARTIDA
     Private Sub NuevoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles NuevoToolStripMenuItem.Click
         BorrarTablero()
         CargarTablero(numFila)
     End Sub
 
+    ' CERRAR EL JUEGO
     Private Sub SalirToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SalirToolStripMenuItem.Click
         Close()
     End Sub
 
+    ' REINICIAR EL MARCADOR
     Private Sub botonBorrar_Click(sender As Object, e As EventArgs) Handles botonBorrar.Click
         puntuacion1.Text = 0
         Puntuacion2.Text = 0
     End Sub
 
+    ' ABRIR VENTANA DE AYUDA
     Private Sub AyudaButton_Click(sender As Object, e As EventArgs) Handles AyudaButton.Click
         My.Forms.FormAyuda.Show()
     End Sub
 
+    ' ABRIR VENTANA DE CONFIGURACION
     Private Sub PropiedadesToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PropiedadesToolStripMenuItem.Click
         My.Forms.FormPropiedades.Show()
     End Sub
