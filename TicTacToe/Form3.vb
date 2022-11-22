@@ -25,8 +25,6 @@
         Form1.CargarTablero(tablero)
 
         Close()
-
-
     End Sub
 
     Private Sub btCancelar_Click(sender As Object, e As EventArgs) Handles btCancelar.Click

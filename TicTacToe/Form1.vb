@@ -19,7 +19,7 @@ Public Class Form1
     Dim tabJuego(16) As Button
     Dim finJuego As Boolean
 
-
+    ' AJUSTES INICIALES
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         numFila = 3
         numTablero = numFila * numFila
@@ -291,7 +291,7 @@ Public Class Form1
         End While
     End Sub
 
-    ' MAECA LA CASILLA SELECCIONADA
+    ' MARCA LA CASILLA SELECCIONADA
     Private Sub Jugada(sender As Button)
         Dim casilla As Button = sender
 
@@ -316,7 +316,6 @@ Public Class Form1
         CambiaTurno()
     End Sub
 
-
     ' BORRA EL TABLERO
     Public Sub BorrarTablero()
         tablero.Controls.Clear()
@@ -332,7 +331,6 @@ Public Class Form1
             tabJuego(i).Text = ""
         Next
     End Sub
-
 
     ' COMPRUEBA SI UNO DE LOS 2 HA GANADO O HAY EMPATE
     Private Sub score()
